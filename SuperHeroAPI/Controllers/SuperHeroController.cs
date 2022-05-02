@@ -23,6 +23,13 @@ namespace SuperHeroAPI.Controllers
                     PLace = "New York"}
             };
 
+        private readonly DataContext _context;
+
+        public SuperHeroController(DataContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
         public async Task<ActionResult<List<SuperHero>>> Get()
         {
